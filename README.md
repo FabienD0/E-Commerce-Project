@@ -1,26 +1,26 @@
 # E-Commerce Project
 
-This is my first group project, we had to build a full-stack complete E-Commerce. I learned a lot about decision making and how to work as a group with Git. 
+My first group project was to build a full-stack complete online store. During this project, I learned a lot about decision-making,how to work with a team using Git and how to solve merge conflict.
 
-The front-end was built with React, and the back-end with Node.js and MongoDB.
+React was used for the front end, and Node.js and MongoDB for the back end.
 
-We created a modern design that is mobile friendly. UseReducer is used to deal with the backend, with this we avoid useless request to the backend. 
+A modern, mobile-friendly design was created by us. In order to avoid unnecessary requests to the backend, UseReducer is used.
 
 ![](https://github.com/FabienD0/E-Commerce-Project/blob/master/client/public/images/ezgif-1-5fb55e88cf.gif)
 
 ## Functionallity
 
-- Display details of the product when you click on it
-- Add / Remove quantity 
-- Add to cart
-- A search bar that look at every product in the database
-- Can't add to cart the products that are 'out of stock'
-- Filter items by categories or brands
-- Modal for the cart that display an icon when you add products 
-- From the cart you can remove an item or clear everything
-- Checkout page that calculate the total with the taxes, the total will change if we update the quantity directly from the checkout page
-- The back-end will validate if you enter the right information in the checkout form. If not,an error will display
-- Confirmation page with your order ID, everything is saved in the database
+- When you click on a product, details are displayed.
+- Quantity can be added or removed.
+- Adding to cart.
+- A search bar that searches every product in the database.
+- 'Out of stock' products cannot be added to cart.
+- Filter items by categories or brands.
+- A modal will pop up in the cart displaying an icon once you add a product.
+- In the cart, you have the option to remove individual items or clear the entire cart.
+- The checkout page computes the total cost with taxes, which will update automatically if you change the quantity from the same page.
+- The back-end system will verify that the information you provide in the checkout form is correct. If not, an error message will appear.
+- After your order is confirmed, you'll see a confirmation page with your unique order ID, and all the details will be saved in the database.
 
 ## Coding Editor Setup
 
