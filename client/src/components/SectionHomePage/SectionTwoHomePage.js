@@ -10,7 +10,7 @@ const SectionTwoHomePage = () => {
 
   //fetch for all the products in our database
   useEffect(() => {
-    fetch("/api/products")
+    fetch("https://e-commerce-project-dvgs.onrender.com/api/products")
       .then((res) => {
         return res.json();
       })
