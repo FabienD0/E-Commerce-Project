@@ -17,6 +17,8 @@ import AllProducts from "./AllProducts";
 import Checkout from "./Checkout";
 import Confirmation from "./Confirmation";
 
+export const URL = process.env.REACT_APP_SERVER_URL;
+
 function App() {
   const [isCart, setIsCart] = useState(false);
 

@@ -3,6 +3,7 @@ import ItemCard from "../ItemCard";
 import styled from "styled-components";
 import LoaderHomePage from "../loaders/LoaderHomePage";
 import PaginationContainer from "../PaginationContainer";
+import { URL } from "../App";
 
 //show latest products added to website
 const SectionTwoHomePage = () => {
@@ -10,7 +11,8 @@ const SectionTwoHomePage = () => {
 
   //fetch for all the products in our database
   useEffect(() => {
-    fetch("/api/products")
+    // fetch("/api/products")
+    fetch(`${URL}/api/products`)
       .then((res) => {
         return res.json();
       })

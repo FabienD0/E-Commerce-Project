@@ -8,6 +8,7 @@ import SearchResult from "./utils/SearchResult";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { CartContext } from "./CartContext";
+import { URL } from "./App";
 
 const Header = ({ setIsCart }) => {
   const [isHamburger, setIsHamburger] = useState(false);
@@ -37,7 +38,7 @@ const Header = ({ setIsCart }) => {
 
   //fetch list of categories for dropdown menu
   useEffect(() => {
-    fetch("/api/categories")
+    fetch(`${URL}/api/categories`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data.data);
@@ -92,7 +93,7 @@ const Header = ({ setIsCart }) => {
                 {categories &&
                   categories.map((category) => {
                     return (
-                      <li>
+                      <li key={category.name}>
                         <DropdownLink
                           to={`/categories/${category}`}
                           onClick={handleDropClose}

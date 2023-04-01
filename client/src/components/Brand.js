@@ -10,7 +10,7 @@ const Brand = () => {
   const [brand, setBrand] = useState();
   const [products, setProducts] = useState();
   useEffect(() => {
-    fetch(`/api/brand/${brandId}`)
+    fetch(`${URL}/api/brand/${brandId}`)
       .then((res) => res.json())
       .then((data) => {
         setBrand(data.data.brand);

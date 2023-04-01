@@ -6,11 +6,13 @@ import { SectionTitle, ContainerAll, Container } from "./Category";
 import { sortByNumInStock } from "./utils/Sorting";
 import Sorter from "./Sorter";
 import styled from "styled-components";
+import { URL } from "./App";
+
 const AllProducts = () => {
   const [products, setProducts] = useState();
   const [sortOrder, setSortOrder] = useState("default");
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${URL}/api/products`)
       .then((res) => res.json())
       .then((result) => setProducts(sortByNumInStock(result.data)));
   }, []);
