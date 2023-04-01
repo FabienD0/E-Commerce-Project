@@ -36,7 +36,7 @@ We created a modern and mobile-friendly design. In order to avoid unnecessary re
 ### **Second Terminal: The Website**
 
 1. Open a terminal.
-2. Navigate to the server folder: `cd client`.
+2. Navigate to the client folder: `cd client`.
 3. Install the required packages: `yarn install`
 4. Once that's done you can start the server: `yarn start`
 ---
