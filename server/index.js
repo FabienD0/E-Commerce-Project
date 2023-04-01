@@ -19,7 +19,7 @@ const {
   getItemsByCategory,
 } = require("./handlers");
 
-const PORT = 4000;
+const PORT = 8080;
 
 express()
   .use(function (req, res, next) {
