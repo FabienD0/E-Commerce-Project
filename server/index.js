@@ -19,8 +19,7 @@ const {
   getItemsByCategory,
 } = require("./handlers");
 
-// const PORT = 8080;
-const PORT = "https://e-commerce-project-dvgs.onrender.com";
+const PORT = 8080;
 
 express()
   .use(function (req, res, next) {
