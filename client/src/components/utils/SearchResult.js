@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { URL } from "../App";
 
 const SearchResult = ({
   searchInput,
@@ -21,7 +22,7 @@ const SearchResult = ({
   //Fetch item by name
   useEffect(() => {
     if (isSearchResultActive) {
-      fetch(`/api/products/${searchInput}`)
+      fetch(`${URL}/api/products/${searchInput}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 200) {

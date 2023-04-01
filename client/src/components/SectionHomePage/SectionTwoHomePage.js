@@ -11,7 +11,6 @@ const SectionTwoHomePage = () => {
 
   //fetch for all the products in our database
   useEffect(() => {
-    // fetch("/api/products")
     fetch(`${URL}/api/products`)
       .then((res) => {
         return res.json();

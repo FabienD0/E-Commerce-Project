@@ -5,34 +5,42 @@ import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import { useState } from "react";
 import { useContext } from "react";
-
-import {CartContext} from "./CartContext";
+import { CartContext } from "./CartContext";
+import { URL } from "./App";
 
 const ItemCard = ({ product }) => {
   const [isCartPending, setIsCartPending] = useState(false);
 
-
-	const { state: { selectedProducts }, actions : { addToCart : addToCartReducer }} = useContext(CartContext);
+  const {
+    state: { selectedProducts },
+    actions: { addToCart: addToCartReducer },
+  } = useContext(CartContext);
   //Add item to the cart
   const addToCart = (e) => {
     e.preventDefault();
     if (product.numInStock !== 0) {
       setIsCartPending(true);
 
-	const productInCart = selectedProducts.length && selectedProducts.find(prod => prod._id === product._id);
+      const productInCart =
+        selectedProducts.length &&
+        selectedProducts.find((prod) => prod._id === product._id);
 
-	const selectQuantity = productInCart && (productInCart.quantity + 1 >= productInCart.numInStock ? productInCart.numInStock : productInCart.quantity + 1);
+      const selectQuantity =
+        productInCart &&
+        (productInCart.quantity + 1 >= productInCart.numInStock
+          ? productInCart.numInStock
+          : productInCart.quantity + 1);
 
-	const quantityToAdd = productInCart ? (selectQuantity) : 1;
+      const quantityToAdd = productInCart ? selectQuantity : 1;
 
-	addToCartReducer({product, quantity: quantityToAdd})
-			
-      fetch("/api/addToCart", {
+      addToCartReducer({ product, quantity: quantityToAdd });
+
+      fetch(`${URL}/api/addToCart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({product, quantity: quantityToAdd}),
+        body: JSON.stringify({ product, quantity: quantityToAdd }),
       })
         .then((response) => response.json())
         .then((data) => {

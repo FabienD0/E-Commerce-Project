@@ -3,13 +3,14 @@ import styled from "styled-components";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import { CartContext } from "./CartContext";
+import { URL } from "./App";
 
 const ItemCardCart = ({ product, isItemRemoved, setIsItemRemoved }) => {
   const [isRemoveLoading, setIsRemoveLoading] = useState(false);
 
-
-
-  const {actions: {removeFromCart, fetchCart}} = useContext(CartContext);
+  const {
+    actions: { removeFromCart, fetchCart },
+  } = useContext(CartContext);
   //change price STRING to price FLOAT
   const productPrice = parseFloat(
     product.price.replace("$", "") * product.quantity
@@ -17,7 +18,7 @@ const ItemCardCart = ({ product, isItemRemoved, setIsItemRemoved }) => {
   //Remove ONE item from the card
   const handleRemove = () => {
     setIsRemoveLoading(true);
-    fetch(`/api/removeFromCart/${product._id}`, {
+    fetch(`${URL}/api/removeFromCart/${product._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -27,10 +28,10 @@ const ItemCardCart = ({ product, isItemRemoved, setIsItemRemoved }) => {
         return response.json();
       })
       .then((data) => {
-		console.log(`then: `, product)
+        console.log(`then: `, product);
         setIsItemRemoved(!isItemRemoved);
         setIsRemoveLoading(false);
-		removeFromCart({product});
+        removeFromCart({ product });
       })
       .catch((error) => {
         console.error(error);

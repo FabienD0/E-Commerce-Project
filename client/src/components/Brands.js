@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BrandsLoader from "./loaders/BrandsLoader.js";
 import styled from "styled-components";
+import { URL } from "./App.js";
 
 //display all the names/logos of the brands available
 const Brands = () => {
@@ -9,7 +10,7 @@ const Brands = () => {
 
   //get Brands from Mongo
   useEffect(() => {
-    fetch("/api/brands")
+    fetch(`${URL}/api/brands`)
       .then((res) => res.json())
       .then((data) => {
         //save and sort brand names in alphabetical order

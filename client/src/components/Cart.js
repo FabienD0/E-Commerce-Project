@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import ItemCardCart from "./ItemCardCart";
 import { CartContext } from "./CartContext";
 import { useNavigate } from "react-router-dom";
+import { URL } from "./App";
 
 const Cart = ({ isCart, setIsCart }) => {
   const [isItemRemoved, setIsItemRemoved] = useState(false);
@@ -22,7 +23,7 @@ const Cart = ({ isCart, setIsCart }) => {
 
   //fetch for all the products in the cart
   useEffect(() => {
-    fetch("/api/cart")
+    fetch(`${URL}/api/cart`)
       .then((res) => {
         return res.json();
       })
@@ -37,7 +38,7 @@ const Cart = ({ isCart, setIsCart }) => {
   //Clear All Cart ITEM
   const handleClear = () => {
     setIsDeleteLoading(true);
-    fetch("/api/resetCart", {
+    fetch(`${URL}/api/resetCart`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

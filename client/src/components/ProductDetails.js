@@ -6,6 +6,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import QuantityComponent from "./utils/quantityComponent";
 import { CartContext } from "./CartContext";
 import ProductDetailsLoader from "./loaders/ProductDetailsLoader";
+import { URL } from "./App";
 //Displays the product based on productId
 const ProductDetails = () => {
   const [product, setProduct] = useState();
@@ -19,12 +20,12 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   //useEffect used to fetch for the specific product then fetch for the company that made it.
   useEffect(() => {
-    fetch(`/api/product/${params}`)
+    fetch(`${URL}/api/product/${params}`)
       .then((res) => res.json())
       .then((result) => {
         setProduct(result.data);
         setPriceItem(parseFloat(result.data.price.replace("$", "")));
-        return fetch(`/api/brand/${result.data.companyId}`);
+        return fetch(`${URL}/api/brand/${result.data.companyId}`);
       })
       .then((res) => res.json())
       .then((result) => {
@@ -58,7 +59,7 @@ const ProductDetails = () => {
 
     addToCart({ product, quantity: newQuantity });
 
-    fetch("/api/addToCart", {
+    fetch(`${URL}/api/addToCart`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

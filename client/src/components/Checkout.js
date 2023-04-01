@@ -5,6 +5,7 @@ import QuantityComponent from "./utils/quantityComponent";
 import styled from "styled-components";
 import { useEffect } from "react";
 import Loader from "./loaders/Loader";
+import { URL } from "./App";
 
 const Checkout = () => {
   const {
@@ -29,7 +30,7 @@ const Checkout = () => {
         updateCart({ index, quantity: qty });
 
         setIsUpdating(true);
-        fetch("/api/addToCart", {
+        fetch(`${URL}/api/addToCart`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import { useNavigate } from "react-router-dom";
+import { URL } from "./App";
 
 const FormData = () => {
   const {
@@ -28,7 +29,7 @@ const FormData = () => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    fetch("/api/checkout", {
+    fetch(`${URL}/api/checkout`, {
       method: "POST",
       headers: {
         Accept: "application/json",

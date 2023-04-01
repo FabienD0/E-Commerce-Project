@@ -5,13 +5,14 @@ import styled from "styled-components";
 import Loader from "./loaders/Loader";
 import { Pagination } from "@mui/material";
 import PaginationContainer from "./PaginationContainer";
+import { URL } from "./App";
 
 const Category = () => {
   const [itemsInCategory, setItemsInCategory] = useState();
   const { category } = useParams();
 
   useEffect(() => {
-    fetch(`/api/categories/${category}`)
+    fetch(`${URL}/api/categories/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setItemsInCategory(data.data);
@@ -27,9 +28,12 @@ const Category = () => {
     <ContainerAll>
       <SectionTitle>{category} </SectionTitle>
       <Container>
-		<PaginationContainer perPage={3} items={itemsInCategory.map((item) => {
-          return <ItemCard product={item} key={item._id} />;
-        })} />
+        <PaginationContainer
+          perPage={3}
+          items={itemsInCategory.map((item) => {
+            return <ItemCard product={item} key={item._id} />;
+          })}
+        />
       </Container>
     </ContainerAll>
   );

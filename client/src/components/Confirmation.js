@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { URL } from "./App";
 
 const Confirmation = () => {
   const [orderInfo, setOrderInfo] = useState();
@@ -8,7 +9,7 @@ const Confirmation = () => {
 
   //fetch order from BE
   useEffect(() => {
-    fetch(`/api/confirmation/${orderId}`)
+    fetch(`${URL}/api/confirmation/${orderId}`)
       .then((res) => res.json())
       .then((data) => {
         setOrderInfo(data.data);
@@ -18,7 +19,7 @@ const Confirmation = () => {
 
   //clear cart from DB
   useEffect(() => {
-    fetch("/api/resetCart", {
+    fetch(`${URL}/api/resetCart`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

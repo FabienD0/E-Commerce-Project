@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import Loader from "./loaders/Loader";
 import styled from "styled-components";
+import { URL } from "./App";
 
 //show all items from a certain brand
 const Brand = () => {
