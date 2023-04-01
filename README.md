@@ -4,7 +4,7 @@ My first group project was to build a full-stack complete online store. During t
 
 React was used for the front end. Node.js and MongoDB for the back end.
 
-A modern, mobile-friendly design was created by us. In order to avoid unnecessary requests to the backend, UseReducer is used.
+We created a modern and mobile-friendly design. In order to avoid unnecessary requests to the backend, UseReducer is used.
 
 ![](https://github.com/FabienD0/E-Commerce-Project/blob/master/client/public/images/ezgif-1-5fb55e88cf.gif)
 
