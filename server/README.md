@@ -1,6 +1,5 @@
 # Backend
 
-**OPTIONAL: You can document your endpoints in this file.**
 | Endpoint | Method | Description | Expected Body |
 |---------------------- | --------- | ------------------------------------------------- | --------------------- |
 | `"/api/products"` | `GET` | Returns an array of all the products. | `N/A` |
