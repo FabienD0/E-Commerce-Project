@@ -1,6 +1,6 @@
 # E-Commerce Project
 
-My first group project was to build a full-stack complete online store. During this project, I learned a lot about decision-making,how to work with a team using Git and how to solve merge conflict.
+My first group project was to build a full-stack complete online store. During this project, I learned a lot about decision making,how to work with a team using Git and how to solve merge conflict.
 
 React was used for the front end. Node.js and MongoDB for the back end.
 
