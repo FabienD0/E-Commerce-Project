@@ -4,9 +4,10 @@ My first group project was to build a full-stack complete online store. During t
 
 React was used for the front end. Node.js and MongoDB for the back end.
 
-<b> Try it out : https://tinyurl.com/PulsePeak <b>
+<b> Try it out : https://tinyurl.com/PulsePeak <b> (The first loading could be slow due to the host sleeping)
 
 ![](https://github.com/FabienD0/E-Commerce-Project/blob/master/client/public/images/ezgif-1-5fb55e88cf.gif)
+
 
 ## Functionallity
 
